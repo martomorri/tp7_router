@@ -1,3 +1,7 @@
 form, th, td, table {
     padding: 10px;
 }
+
+div.row {
+    justify-content: center;
+}
