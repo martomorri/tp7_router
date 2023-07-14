@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+}
+
+.navbar {
+  background-color: yellow !important; /* Set your desired background color */
+}
+
+.nav-link {
+  color: #333333; /* Set your desired text color */
+  font-weight: bold;
+}
+
+.nav-link:hover,
+.navbar-toggler:hover {
+  color: #ff9900; /* Set your desired hover color */
+}
+
+.dropdown-menu {
+  background-color: #ffffff; /* Set your desired background color for dropdown */
+}
+
+.dropdown-menu a {
+  color: #333333; /* Set your desired text color for dropdown */
+}
+
+.dropdown-menu a:hover {
+  background-color: #f2f2f2; /* Set your desired hover background color for dropdown */
+  color: #333333; /* Set your desired hover text color for dropdown */
+}
+
+.btn-light {
+  position: relative;
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  border: 0px;
+}
+
+.btn-light::before,
+.btn-light::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: yellow;
+  z-index: -1;
+}
+
+.btn-light::before {
+  left: -4px;
+}
+
+.btn-light::after {
+  right: -4px;
+}
+
+.btn-light:hover {
+  background-color: rgb(225, 225, 0);
+  color: black;
+}
+
+.btn-light:hover::before,
+.btn-light:hover::after {
+  background-color: yellow;
+}

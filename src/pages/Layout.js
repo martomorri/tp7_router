@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import './Layout.css';
 
 export default function Layout() {
     return (
@@ -19,7 +20,7 @@ export default function Layout() {
                                 <Link className='btn btn-light' to="/productos">Productos</Link>
                             </li>
                             <li className="nav-item dropdown">
-                                <button className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button className="btn btn-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     Categorias
                                 </button>
                                 <ul className="dropdown-menu">
