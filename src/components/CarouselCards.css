@@ -1,0 +1,19 @@
+.carousel-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: gray;
+}
+
+#carouselExample {
+  margin-top: 20px;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./PageProductos.css";
-import CardProducto from "../components/CardProducto";
-import ListaCategorias from "../components/ListaCategorias";
+import FormFiltro from "../components/FormFiltro";
+import CarouselCards from "../components/CarouselCards";
 import axios from "axios";
 
 export default function PageProductos() {
@@ -74,83 +74,8 @@ export default function PageProductos() {
 
   return (
     <>
-      <form className="form-inline my-2 my-lg-0">
-        <div className="row">
-          <div className="col-md-10">
-            <input
-              onChange={(e) => filterProducts(e)}
-              id="buscar"
-              type="text"
-              className="form-control"
-            />
-          </div>
-          <div id="divBuscar" className="col-md-2">
-            <div className="dropdown">
-              <button
-                className="btn btn-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Filtrar por categoría
-              </button>
-              <ul className="dropdown-menu" id="categories">
-                {categories.map((c) => (
-                  <ListaCategorias categoria={c} key={c.id} />
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </form>
-      <div id="carouselExample" className="carousel slide">
-        <div className="carousel-inner">
-          {paginatedProductos.map((chunk, index) => (
-            <div
-              className={`carousel-item ${index === 0 ? "active" : ""}`}
-              key={index}
-            >
-              <div className="row">
-                {chunk.map((p) => (
-                  <CardProducto
-                    id={p.id}
-                    title={p.title}
-                    price={p.price}
-                    rating={p.rating}
-                    image={p.image}
-                    description={p.description}
-                    key={p.id}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExample"
-          data-bs-slide="prev"
-          onClick={handlePrev}
-          style={{ display: skip === 0 ? "none" : "block" }}
-        >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExample"
-          data-bs-slide="next"
-          onClick={handleNext}
-        >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
-      {/* <div id="paginacion">
-        <a id="masProductos">Ver más productos</a>
-      </div> */}
+      <FormFiltro categories={categories} filterProducts={filterProducts} />
+      <CarouselCards paginatedProductos={paginatedProductos} handlePrev={handlePrev} handleNext={handleNext} skip={skip} />
     </>
   );
 }
