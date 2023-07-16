@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./PageProductos.css";
-import FormFiltro from "../components/FormFiltro";
-import CarouselCards from "../components/CarouselCards";
+import "../css/PageProductos.css";
+import FormFiltro from "../../components/PageProductos/js/FormFiltro";
+import CarouselCards from "../../components/PageProductos/js/CarouselCards";
 import axios from "axios";
 
 export default function PageProductos() {

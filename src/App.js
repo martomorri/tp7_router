@@ -1,10 +1,10 @@
 import './App.css';
 // import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './pages/Layout';
-import PageProductos from './pages/PageProductos';
-import Home from './pages/Home';
-import Producto from './pages/Producto';
+import Layout from './pages/js/Layout';
+import PageProductos from './pages/js/PageProductos';
+import Home from './pages/js/Home';
+import Producto from './pages/js/Producto';
 
 function App() {
   return (

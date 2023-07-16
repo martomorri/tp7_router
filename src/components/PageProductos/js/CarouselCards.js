@@ -1,6 +1,6 @@
 import React from "react";
 import CardProducto from "./CardProducto";
-import './CarouselCards.css';
+import '../css/CarouselCards.css';
 
 export default function CarouselCards(props) {
   return (

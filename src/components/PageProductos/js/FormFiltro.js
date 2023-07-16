@@ -1,6 +1,6 @@
 import React from "react";
 import ListaCategorias from "./ListaCategorias";
-import './FormFiltro.css';
+import '../css/FormFiltro.css';
 
 export default function FormFiltro(props) {
   return (
