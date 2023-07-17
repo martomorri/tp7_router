@@ -5,6 +5,7 @@ import Layout from './pages/js/Layout';
 import PageProductos from './pages/js/PageProductos';
 import Home from './pages/js/Home';
 import Producto from './pages/js/Producto';
+import NotFound from './pages/js/NotFound';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <Route path="/productos" element={<PageProductos />} />
             {/* <Route path="/contacto" element={<Contacto />} /> */}
             <Route path="/productos/:id" element={<Producto />} />
-            <Route path="*" element={<h1>404 Not Found</h1>} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

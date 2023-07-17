@@ -35,7 +35,7 @@ export default function CarouselCards(props) {
         onClick={props.handlePrev}
         style={{ display: props.skip === 0 ? "none" : "block" }}
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="carousel-control-prev-icon" aria-hidden="true">◀</span>
         <span className="visually-hidden">Previous</span>
       </button>
       <button
@@ -45,7 +45,7 @@ export default function CarouselCards(props) {
         data-bs-slide="next"
         onClick={props.handleNext}
       >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="carousel-control-next-icon" aria-hidden="true">▶</span>
         <span className="visually-hidden">Next</span>
       </button>
     </div>

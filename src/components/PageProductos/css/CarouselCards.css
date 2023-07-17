@@ -11,7 +11,24 @@
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: gray;
+  background-color: white;
+  border-radius: 50%;
+  background-image: none;
+  color: #3483fa;
+  font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-control-prev-icon {
+  margin-left: 30px;
+}
+
+.carousel-control-next-icon {
+  margin-right: 30px;
 }
 
 #carouselExample {

@@ -1,0 +1,57 @@
+div.row {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.discount {
+  color: #00a650;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.display-4 {
+  color: black;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.btn-dark {
+  background-color: rgba(65, 137, 230, 0.15) !important;
+  color: #3483fa;
+  border-color: transparent;
+}
+
+.btn-dark:hover {
+  background-color: rgba(19, 100, 207, 0.15) !important;
+  color: #3483fa;
+  border-color: transparent;
+}
+
+.btn-dark:focus,
+.btn-dark:active {
+  background-color: rgba(5, 83, 184, 0.15) !important;
+  color: #3483fa !important;
+  border-color: transparent !important;
+}
+
+.btn-dark:active:focus {
+  background-color: rgba(65, 137, 230, 0.15) !important;
+}
+
+.btn-dark:active:hover {
+  background-color: rgba(65, 137, 230, 0.15) !important;
+}
+
+.btn-dark:hover::before,
+.btn-dark:hover::after,
+.btn-dark:focus::before,
+.btn-dark:focus::after,
+.btn-dark:active::before,
+.btn-dark:active::after {
+  background-color: rgba(65, 137, 230, 0.15) !important;
+  color: #3483fa;
+  border-color: transparent;
+}

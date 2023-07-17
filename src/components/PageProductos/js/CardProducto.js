@@ -15,7 +15,7 @@ export default function CardProducto(props) {
         <p className="card-text">
           <b>Precio: </b>U$D{props.price}
         </p>
-        <Link to={"/productos/" + props.id} className="btn btn-warning">
+        <Link to={"/productos/" + props.id} className="btn btn-light">
           Ver Mas
         </Link>
       </div>

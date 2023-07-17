@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/Rating.css';
 
 export default function Rating({rating}) {
     const total = 5;
@@ -7,6 +8,6 @@ export default function Rating({rating}) {
     const star = '★';
     const stars = star.repeat(rating) + emptyStar.repeat(empty);
     return (
-        <p>{stars}</p>
+        <p className='rating'>{stars}</p>
     )
 }
