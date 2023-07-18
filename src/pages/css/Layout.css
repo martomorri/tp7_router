@@ -2,31 +2,52 @@
   padding: 0;
 }
 
+.logo {
+  width: fit-content;
+  margin-right: 10px;
+}
+
 .navbar {
-  background-color: yellow !important; /* Set your desired background color */
+  background-color: yellow !important;
 }
 
 .nav-link {
-  color: #333333; /* Set your desired text color */
+  color: #333333;
   font-weight: bold;
 }
 
 .nav-link:hover,
 .navbar-toggler:hover {
-  color: #ff9900; /* Set your desired hover color */
+  color: #ff9900;
+}
+
+#login {
+  position: absolute;
+  margin-left: 90%;
+  margin-right: 5px;
+}
+
+.icon {
+  width: 20px;
+  height: auto;
 }
 
 .dropdown-menu {
-  background-color: #ffffff; /* Set your desired background color for dropdown */
+  background-color: #ffffff;
 }
 
 .dropdown-menu a {
-  color: #333333; /* Set your desired text color for dropdown */
+  color: #333333;
 }
 
 .dropdown-menu a:hover {
-  background-color: #f2f2f2; /* Set your desired hover background color for dropdown */
-  color: #333333; /* Set your desired hover text color for dropdown */
+  background-color: yellow !important;
+  color: #333333;
+}
+
+#nav-dropdown:focus {
+  box-shadow: none !important;
+  background-color: rgb(210, 210, 0) !important;
 }
 
 .btn-light {
@@ -61,7 +82,16 @@
   color: black;
 }
 
+.btn-light:active:focus {
+  background-color: rgb(210, 210, 0);
+  color: black;
+}
+
 .btn-light:hover::before,
-.btn-light:hover::after {
+.btn-light:hover::after,
+.btn-light:active::before,
+.btn-light:active::after,
+.btn-light:focus::before,
+.btn-light:focus::after {
   background-color: yellow;
 }
