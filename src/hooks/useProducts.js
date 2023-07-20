@@ -19,7 +19,7 @@ export const useProducts = ({url}) => {
           })),
         ]);
       });
-    }, []);
+    }, [url]);
     
     return { productos, setProductos }
   }
