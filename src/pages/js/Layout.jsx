@@ -1,9 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import { useCategories } from '../../hooks/useCategories';
 import NavItem from "../../components/Layout/NavItem";
 import "../css/Layout.css";
 
 export default function Layout() {
+  const {categories} = useCategories();
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -22,7 +25,7 @@ export default function Layout() {
               />
               <NavItem item="Home" />
               <NavItem item="Productos" path="productos" />
-              <NavItem item="Categorias" dropdown={true} />
+              <NavItem item="Categorias" dropdown={true} categories={categories} />
               <NavItem item="Contacto" path="contacto" />
             </ul>
             <ul id="login" className="navbar-nav me-auto mb-2 mb-lg-0">

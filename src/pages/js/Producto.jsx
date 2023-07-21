@@ -25,9 +25,9 @@ export default function Producto() {
       </div>
       <div className="col">
         <span>
-          <span class="original-price">U$D {productos.price}</span>
+          <span className="original-price">U$D {productos.price}</span>
           <br />
-          <span class="discount">
+          <span className="discount">
             <span className="display-4">
               U$D{" "}
               {productos.price -

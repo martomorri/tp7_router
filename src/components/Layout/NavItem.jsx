@@ -1,13 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './NavItem.css'
+import ListaCategorias from "../ListaCategorias";
+import "./NavItem.css";
 
-export default function NavItem({
-  dropdown = false,
-  item,
-  path = "",
-  logo = false,
-}) {
+export default function NavItem({dropdown = false, item, path = "", logo = false, categories}) {
   if (dropdown) {
     return (
       <li className="nav-item dropdown">
@@ -20,7 +16,11 @@ export default function NavItem({
         >
           {item}
         </button>
-        <ul className="dropdown-menu"></ul>
+        <ul className="dropdown-menu">
+          {categories.map((c) => (
+            <ListaCategorias categoria={c} key={c.id} />
+          ))}
+        </ul>
       </li>
     );
   } else if (logo) {

@@ -1,5 +1,5 @@
 import React from "react";
-import ListaCategorias from "./ListaCategorias";
+import ListaCategorias from "../../ListaCategorias";
 import axios from "axios";
 import '../css/FormFiltro.css';
 

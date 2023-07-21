@@ -1,5 +1,6 @@
 import { useSkip } from "../hooks/useSkip";
 import CardProducto from "./PageProductos/js/CardProducto";
+import { Spinner } from "react-bootstrap";
 import "./Carousel.css";
 
 export default function Carousel({ images = null, productos = null }) {
@@ -40,8 +41,10 @@ export default function Carousel({ images = null, productos = null }) {
     ));
   } else {
     carousel_inner = (
-      <div className="carousel-item active">
-        <p>No data available for Carousel</p>
+      <div className="carousel-item active text-center">
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
       </div>
     );
   }
