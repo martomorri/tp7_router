@@ -13,6 +13,11 @@
   height: auto;
 }
 
+.logo {
+  width: fit-content;
+  margin-right: 10px;
+}
+
 .dropdown-menu {
   background-color: #ffffff;
 }
