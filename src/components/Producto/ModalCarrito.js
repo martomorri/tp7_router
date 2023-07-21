@@ -1,20 +1,30 @@
 import React from "react";
+import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function ModalCarrito(props) {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModalOpen = () => {
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className="row">
       <button
         className="btn btn-dark"
         type="button"
-        onClick={props.handleModalOpen}
+        onClick={handleModalOpen}
       >
         Agregar al carrito
       </button>
-      <Modal show={props.showModal} onHide={props.handleModalClose}>
+      <Modal show={showModal} onHide={handleModalClose}>
         <Modal.Header closeButton>
           <Modal.Title>{props.product.title}</Modal.Title>
         </Modal.Header>
@@ -32,7 +42,7 @@ export default function ModalCarrito(props) {
           >
             Seguir comprando
           </Link>
-          <Button variant="dark" onClick={props.handleModalClose}>
+          <Button variant="dark" onClick={handleModalClose}>
             Cerrar
           </Button>
         </Modal.Footer>

@@ -11,87 +11,8 @@
   background-color: yellow !important;
 }
 
-.nav-link {
-  color: #333333;
-  font-weight: bold;
-}
-
-.nav-link:hover,
-.navbar-toggler:hover {
-  color: #ff9900;
-}
-
 #login {
   position: absolute;
   margin-left: 90%;
   margin-right: 5px;
-}
-
-.icon {
-  width: 20px;
-  height: auto;
-}
-
-.dropdown-menu {
-  background-color: #ffffff;
-}
-
-.dropdown-menu a {
-  color: #333333;
-}
-
-.dropdown-menu a:hover {
-  background-color: yellow !important;
-  color: #333333;
-}
-
-#nav-dropdown:focus {
-  box-shadow: none !important;
-  background-color: rgb(210, 210, 0) !important;
-}
-
-.btn-light {
-  position: relative;
-  background-color: yellow;
-  color: black;
-  font-weight: bold;
-  border: 0px;
-}
-
-.btn-light::before,
-.btn-light::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: yellow;
-  z-index: -1;
-}
-
-.btn-light::before {
-  left: -4px;
-}
-
-.btn-light::after {
-  right: -4px;
-}
-
-.btn-light:hover {
-  background-color: rgb(225, 225, 0);
-  color: black;
-}
-
-.btn-light:active:focus {
-  background-color: rgb(210, 210, 0);
-  color: black;
-}
-
-.btn-light:hover::before,
-.btn-light:hover::after,
-.btn-light:active::before,
-.btn-light:active::after,
-.btn-light:focus::before,
-.btn-light:focus::after {
-  background-color: yellow;
 }

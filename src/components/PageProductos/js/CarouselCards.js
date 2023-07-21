@@ -33,7 +33,6 @@ export default function CarouselCards(props) {
         data-bs-target="#carouselExample"
         data-bs-slide="prev"
         onClick={props.handlePrev}
-        // style={{ display: props.skip === 0 ? "none" : "block" }}
       >
         <span className="carousel-control-prev-icon" aria-hidden="true"><img className="icons" src="https://icons.veryicon.com/png/o/internet--web/flatten-icon/previous-8.png" alt="" /></span>
         <span className="visually-hidden">Previous</span>
