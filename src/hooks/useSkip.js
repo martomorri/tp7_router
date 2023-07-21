@@ -11,7 +11,10 @@ export const useSkip = ({productos}) => {
     return chunkedArr;
   };
 
-  const paginatedProductos = chunkArray(productos, 4);
+  let paginatedProductos = null;
+  if (productos) {
+    paginatedProductos = chunkArray(productos, 4);
+  }
 
   const handleNext = () => {
     setSkip((prevSkip) => prevSkip + 4);

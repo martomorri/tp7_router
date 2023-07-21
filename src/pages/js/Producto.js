@@ -2,8 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Rating from "../../components/PageProductos/js/Rating";
-import CarouselImages from "../../components/Producto/CarouselImages";
-// import Carousel from "../../components/Carousel";
+import Carousel from "../../components/Carousel";
 import ModalCarrito from "../../components/Producto/ModalCarrito";
 import { useProducts } from "../../hooks/useProducts";
 import "../css/Producto.css";
@@ -11,9 +10,7 @@ import "../css/Producto.css";
 export default function Producto() {
   const { id } = useParams();
   const url = "https://dummyjson.com/products/" + id;
-  console.log(url);
   const {productos} = useProducts({url, id});
-  console.log(productos);
 
   return (
     <div className="row" style={{ margin: 5 }}>
@@ -24,8 +21,7 @@ export default function Producto() {
         </div>
       </div>
       <div className="col">
-        {/* <CarouselImages images={productos.images} /> */}
-        <CarouselImages images={productos.images} />
+        <Carousel images={productos.images} />
       </div>
       <div className="col">
         <span>

@@ -1,12 +1,10 @@
 import { useSkip } from "../hooks/useSkip";
 import CardProducto from "./PageProductos/js/CardProducto";
-import './Carousel.css'
+import "./Carousel.css";
 
-export default function Carousel({ images, productos = [null] }) {
+export default function Carousel({ images = null, productos = null }) {
   let carousel_inner;
-  const {paginatedProductos, handleNext, handlePrev} = useSkip({productos});
-
-  console.log(images);
+  const { paginatedProductos, handleNext, handlePrev } = useSkip({ productos });
 
   if (images) {
     carousel_inner =
@@ -19,28 +17,33 @@ export default function Carousel({ images, productos = [null] }) {
           <img src={image} alt="" />
         </div>
       ));
-  }
-  else {
+  } else if (productos) {
     carousel_inner = paginatedProductos.map((chunk, index) => (
-        <div
-          className={`carousel-item ${index === 0 ? "active" : ""}`}
-          key={index}
-        >
-          <div className="row">
-            {chunk.map((p) => (
-              <CardProducto
-                id={p.id}
-                title={p.title}
-                price={p.price}
-                rating={p.rating}
-                image={p.image}
-                description={p.description}
-                key={p.id}
-              />
-            ))}
-          </div>
+      <div
+        className={`carousel-item ${index === 0 ? "active" : ""}`}
+        key={index}
+      >
+        <div className="row">
+          {chunk.map((p) => (
+            <CardProducto
+              id={p.id}
+              title={p.title}
+              price={p.price}
+              rating={p.rating}
+              image={p.image}
+              description={p.description}
+              key={p.id}
+            />
+          ))}
         </div>
-      ))
+      </div>
+    ));
+  } else {
+    carousel_inner = (
+      <div className="carousel-item active">
+        <p>No data available for Carousel</p>
+      </div>
+    );
   }
   return (
     <div id="carouselExample" className="carousel slide">
