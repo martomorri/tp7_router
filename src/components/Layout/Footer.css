@@ -1,3 +1,6 @@
 .footer {
   background-color: yellow !important;
+  position: relative; /* Set position to relative */
+  bottom: 0;
+  width: 100%;
 }
