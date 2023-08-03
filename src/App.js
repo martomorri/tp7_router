@@ -19,7 +19,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout categories={categories} />}>
-            <Route index element={<Home />} />
+            <Route index element={<Home productos={productos} />} />
             <Route path="/productos" element={<PageProductos productos={productos} setProductos={setProductos} categories={categories} limit={limit} />} />
             {/* <Route path="/contacto" element={<Contacto />} /> */}
             <Route path="/productos/:id" element={<Producto />} />
