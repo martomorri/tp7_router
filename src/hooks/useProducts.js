@@ -20,7 +20,7 @@ export const useProducts = ({ url, id = null }) => {
             description: p.description,
             price: p.price,
             rating: p.rating,
-            image: p.thumbnail,
+            thumbnail: p.thumbnail,
           })),
         ]);
       });

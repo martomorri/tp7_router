@@ -1,9 +1,11 @@
-import React from 'react';
+import { Link } from 'react-router-dom'
 
-export default function ListaCategorias(props) {
+export default function ListaCategorias({ categoria }) {
     return (
         <>
-        <li><button className="dropdown-item">{props.categoria}</button></li>
+            <li>
+                <Link to={'/categoria/' + categoria.toLowerCase()} className="dropdown-item">{categoria}</Link>
+            </li>
         </>
     )
 }

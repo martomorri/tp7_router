@@ -3,3 +3,8 @@
     margin: 10px;
     padding: 0;
 }
+
+#imgCard {
+    max-width: auto !important;
+    max-height: 250px !important;
+}

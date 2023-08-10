@@ -5,6 +5,7 @@ import { useProducts } from './hooks/useProducts';
 import Layout from './pages/js/Layout';
 import PageProductos from './pages/js/PageProductos';
 import Home from './pages/js/Home';
+import ProductosXCategoria from './pages/js/ProductosXCategoria';
 import Producto from './pages/js/Producto';
 import NotFound from './pages/js/NotFound';
 
@@ -20,7 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout categories={categories} />}>
             <Route index element={<Home productos={productos} />} />
-            <Route path="/productos" element={<PageProductos productos={productos} setProductos={setProductos} categories={categories} limit={limit} />} />
+            <Route path="/productos" element={<PageProductos productos={productos} setProductos={setProductos} limit={limit} />} />
+            <Route path="/categoria/:cat" element={<ProductosXCategoria productos={productos} />} />
             {/* <Route path="/contacto" element={<Contacto />} /> */}
             <Route path="/productos/:id" element={<Producto />} />
             <Route path="*" element={<NotFound />} />

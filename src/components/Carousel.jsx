@@ -31,7 +31,7 @@ export default function Carousel({ images = null, productos = null }) {
               title={p.title}
               price={p.price}
               rating={p.rating}
-              image={p.image}
+              image={p.thumbnail}
               description={p.description}
               key={p.id}
             />
