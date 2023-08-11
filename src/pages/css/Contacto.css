@@ -1,0 +1,28 @@
+.contact-form{
+    padding: 2%;
+
+}
+
+.form-group{
+    margin-bottom: 1%;
+    font-size: large;
+}
+
+input[type="tel"],
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+
+label {
+  margin-bottom: 1%;
+  display: block;
+  font-weight: bold;
+}
+
+

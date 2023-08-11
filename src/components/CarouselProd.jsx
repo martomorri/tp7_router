@@ -3,7 +3,7 @@ import CardProducto from "./PageProductos/js/CardProducto";
 import { Spinner } from "react-bootstrap";
 import "./Carousel.css";
 
-export default function Carousel({ images = null, productos = null }) {
+export default function CarouselProd({ images = null, productos = null }) {
   let carousel_inner;
   const { paginatedProductos, handleNext, handlePrev } = useSkip({ productos });
 

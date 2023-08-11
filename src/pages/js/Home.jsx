@@ -1,4 +1,4 @@
-import Carousel from "../../components/Carousel";
+import { Carousel } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import CardProducto from "../../components/PageProductos/js/CardProducto";
 import { Spinner } from "react-bootstrap";
@@ -6,24 +6,43 @@ import { Spinner } from "react-bootstrap";
 export default function Home({ productos }) {
     const [cincoProductos, setCincoProductos] = useState([])
     const [loading, setLoading] = useState(true)
+    const [prodRandom, setProdRandom] = useState({})
+    console.log(productos)
+    const getProductoRandom = (productos) =>{
+        const random = Math.floor(Math.random() * productos.length)
+        return productos[random]
+    }
     
     useEffect(() => {
-        const copy = productos
-        const productosMezclados = copy.sort(() => 0.5 - Math.random())
-        setCincoProductos(productosMezclados.slice(0, 5))
+        if(productos && productos.length > 0 ){
+        const copy = [...productos]
+        const productosMezclados = copy.sort(() => 0.6 - Math.random())
+        setCincoProductos(productosMezclados.slice(0, 6))
+        const prodRandom = getProductoRandom(productos)
+        setProdRandom(prodRandom)
         setLoading(false)
+        console.log(prodRandom)
+    }
     }, [productos])
+
 
     return (
         loading ? <center><Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
         </Spinner></center> :
             <>
-                <Carousel images={["https://i.dummyjson.com/data/products/11/thumbnail.jpg",
-                    "https://i.dummyjson.com/data/products/7/thumbnail.jpg",
-                    "https://i.dummyjson.com/data/products/99/thumbnail.jpg",
-                    "https://i.dummyjson.com/data/products/16/thumbnail.jpg",
-                    "https://i.dummyjson.com/data/products/39/thumbnail.jpg"]}></Carousel>
+                <Carousel>
+                    {prodRandom.map(pr =>(
+                    <div>
+                    <Carousel.Item
+                            id = {pr.id}
+                            title = {pr.title}
+                            image = {pr.image}
+                            key = {pr.key}
+                    />
+                    </div>
+                    ))}
+                </Carousel>
                 <div className="row">
                     {cincoProductos.map(p => (
                         <div className="col-2">

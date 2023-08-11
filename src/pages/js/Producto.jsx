@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Rating from "../../components/PageProductos/js/Rating";
-import Carousel from "../../components/Carousel";
+import Carousel from "../../components/CarouselProd";
 import ModalCarrito from "../../components/Producto/ModalCarrito";
 import { useProducts } from "../../hooks/useProducts";
 import "../css/Producto.css";

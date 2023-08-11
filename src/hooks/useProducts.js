@@ -21,6 +21,7 @@ export const useProducts = ({ url, id = null }) => {
             price: p.price,
             rating: p.rating,
             thumbnail: p.thumbnail,
+            images: p.images,
           })),
         ]);
       });

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Carousel from '../../components/Carousel'
+import Carousel from '../../components/CarouselProd'
 import { useParams } from 'react-router-dom'
 
 export default function ProductosXCategoria() {

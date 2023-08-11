@@ -8,6 +8,7 @@ import Home from './pages/js/Home';
 import ProductosXCategoria from './pages/js/ProductosXCategoria';
 import Producto from './pages/js/Producto';
 import NotFound from './pages/js/NotFound';
+import Contacto from './pages/js/Contacto';
 
 function App() {
   const limit = 100;
@@ -23,7 +24,7 @@ function App() {
             <Route index element={<Home productos={productos} />} />
             <Route path="/productos" element={<PageProductos productos={productos} setProductos={setProductos} limit={limit} />} />
             <Route path="/categoria/:cat" element={<ProductosXCategoria productos={productos} />} />
-            {/* <Route path="/contacto" element={<Contacto />} /> */}
+            {<Route path="/contacto" element={<Contacto />} /> }
             <Route path="/productos/:id" element={<Producto />} />
             <Route path="*" element={<NotFound />} />
           </Route>
