@@ -1,0 +1,11 @@
+.carouselHome {
+    width: 18rem;
+    margin: 10px;
+    padding: 0;
+    margin-left: 40%;
+}
+
+#imgHome {
+    max-width: auto !important;
+    max-height: 250px !important;
+}

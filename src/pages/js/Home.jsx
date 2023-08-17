@@ -2,27 +2,28 @@ import { Carousel } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import CardProducto from "../../components/PageProductos/js/CardProducto";
 import { Spinner } from "react-bootstrap";
+import "../css/CarouselHome.css"; 
 
 export default function Home({ productos }) {
     const [cincoProductos, setCincoProductos] = useState([])
     const [loading, setLoading] = useState(true)
     const [prodRandom, setProdRandom] = useState({})
     console.log(productos)
-    const getProductoRandom = (productos) =>{
+    const getProductoRandom = (productos) => {
         const random = Math.floor(Math.random() * productos.length)
         return productos[random]
     }
-    
+
     useEffect(() => {
-        if(productos && productos.length > 0 ){
-        const copy = [...productos]
-        const productosMezclados = copy.sort(() => 0.6 - Math.random())
-        setCincoProductos(productosMezclados.slice(0, 6))
-        const prodRandom = getProductoRandom(productos)
-        setProdRandom(prodRandom)
-        setLoading(false)
-        console.log(prodRandom)
-    }
+        if (productos && productos.length > 0) {
+            const copy = [...productos]
+            const productosMezclados = copy.sort(() => 0.6 - Math.random())
+            setCincoProductos(productosMezclados.slice(0, 6))
+            const prodRandom = getProductoRandom(productos)
+            setProdRandom(prodRandom)
+            setLoading(false)
+            console.log(prodRandom)
+        }
     }, [productos])
 
 
@@ -31,16 +32,16 @@ export default function Home({ productos }) {
             <span className="visually-hidden">Loading...</span>
         </Spinner></center> :
             <>
-                <Carousel>
-                    {prodRandom.map(pr =>(
-                    <div>
-                    <Carousel.Item
-                            id = {pr.id}
-                            title = {pr.title}
-                            image = {pr.image}
-                            key = {pr.key}
-                    />
-                    </div>
+                <Carousel className="carouselHome" data-bs-theme="dark">
+                    {prodRandom.images.map(imgSrc => (
+                            <Carousel.Item >
+                                <img
+                                id="imgHome"
+                                className="d-block w-20"
+                                src={imgSrc}
+                                alt={prodRandom.title}
+                                />
+                            </Carousel.Item>
                     ))}
                 </Carousel>
                 <div className="row">

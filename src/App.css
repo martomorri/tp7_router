@@ -21,3 +21,8 @@
 #divBuscar {
   justify-content: space-between;
 }
+
+.carouselHome{
+  align-items: center;
+  justify-content: center;
+}
