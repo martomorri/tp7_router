@@ -25,4 +25,6 @@ label {
   font-weight: bold;
 }
 
-
+#btn-submit {
+  font-size: 18px;
+}

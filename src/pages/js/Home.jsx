@@ -32,7 +32,7 @@ export default function Home({ productos }) {
             <span className="visually-hidden">Loading...</span>
         </Spinner></center> :
             <>
-                <Carousel className="carouselHome" data-bs-theme="dark">
+                <Carousel className="carouselHome">
                     {prodRandom.images.map(imgSrc => (
                             <Carousel.Item >
                                 <img

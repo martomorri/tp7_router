@@ -8,34 +8,36 @@ const Contacto = () => {
       <form>
         <div className="form-group">
           <label htmlFor="name">Nombre:</label>
-          <input type="text" id="name" />
+          <input className='form-control' type="text" id="name" />
         </div>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" />
+          <input className='form-control' type="email" id="email" />
         </div>
         <div className="form-group">
           <label htmlFor="phone">Numero:</label>
-          <input type="tel" id="phone" />
+          <input className='form-control' type="tel" id="phone" />
         </div>
         <div className="form-group">
           <label htmlFor="fecha">Fecha:</label>
-          <input type="date" id="fecha" />
+          <input className='form-control' type="date" id="fecha" />
         </div>
         <div className="form-group">
           <label htmlFor="inquiry">Razon de consulta:</label>
-          <select id="inquiry">
-            <option value="general">Consulta general</option>
-            <option value="support">Support</option>
-            <option value="billing">Problemas con un pago</option>
-            <option value="other">Otros</option>
+          <select className='form-control' id="inquiry">
+            <option className='form-control' value="general">Consulta general</option>
+            <option className='form-control' value="support">Support</option>
+            <option className='form-control' value="billing">Problemas con un pago</option>
+            <option className='form-control' value="other">Otros</option>
           </select>
         </div>
         <div className="form-group">
           <label htmlFor="message">Mensaje:</label>
-          <textarea id="message" rows="4"></textarea>
+          <textarea className='form-control' id="message" rows="4"></textarea>
         </div>
-        <button type="submit" class="btn btn-lg btn-outline-primary">Enviar</button>
+        <div className='row'>
+          <button id='btn-submit' type="submit" class="btn btn-primary">Enviar</button>
+        </div>
       </form>
     </div>
   );
