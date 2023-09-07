@@ -2,12 +2,16 @@ import React from "react";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CarritoContext } from "../../context/carritoContext";
 
 export default function ModalCarrito(props) {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
+  const {carrito, setCarrito} = useContext(CarritoContext)
 
   const handleModalOpen = () => {
+    setCarrito([...carrito, props.product])
     setShowModal(true);
   };
 

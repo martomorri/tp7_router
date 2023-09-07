@@ -1,0 +1,12 @@
+#producto {
+    justify-content: center;
+    align-items: center;
+}
+
+#titulo {
+    font-weight: bold;
+}
+
+#borrar {
+    color: gray;
+}

@@ -9,8 +9,12 @@ import ProductosXCategoria from './pages/js/ProductosXCategoria';
 import Producto from './pages/js/Producto';
 import NotFound from './pages/js/NotFound';
 import Contacto from './pages/js/Contacto';
+import { CarritoContext } from './context/carritoContext';
+import { useState } from 'react';
 
 function App() {
+  const [carrito, setCarrito] = useState([])
+
   const limit = 100;
   const url = `https://dummyjson.com/products?limit=${limit}&skip=0`;
   const {productos, setProductos} = useProducts({url});
@@ -18,18 +22,20 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout categories={categories} />}>
-            <Route index element={<Home productos={productos} />} />
-            <Route path="/productos" element={<PageProductos productos={productos} setProductos={setProductos} limit={limit} />} />
-            <Route path="/categoria/:cat" element={<ProductosXCategoria productos={productos} />} />
-            {<Route path="/contacto" element={<Contacto />} /> }
-            <Route path="/productos/:id" element={<Producto />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <CarritoContext.Provider value={{carrito, setCarrito}}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout categories={categories} carrito={carrito} />}>
+              <Route index element={<Home productos={productos} />} />
+              <Route path="/productos" element={<PageProductos productos={productos} setProductos={setProductos} limit={limit} />} />
+              <Route path="/categoria/:cat" element={<ProductosXCategoria productos={productos} />} />
+              <Route path="/contacto" element={<Contacto />} />
+              <Route path="/productos/:id" element={<Producto />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </CarritoContext.Provider>
     </div>
   );
 }

@@ -1,9 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ListaCategorias from "../ListaCategorias";
+import Carrito from "./Carrito";
 import "./NavItem.css";
 
 export default function NavItem({dropdown = false, item, path = "", logo = false, categories}) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  console.log(path)
+  
   if (dropdown) {
     return (
       <li className="nav-item dropdown">
@@ -29,6 +38,14 @@ export default function NavItem({dropdown = false, item, path = "", logo = false
         <Link to={"/" + path}>{item}</Link>
       </li>
     );
+  }
+  else if (path === 'carrito') {
+    return (
+      <li className="nav-item">
+        <button className="btn btn-light" onClick={handleShow}>{item}</button>
+        <Carrito show={show} handleClose={handleClose}></Carrito>
+      </li>
+    )
   }
   return (
     <li className="nav-item">

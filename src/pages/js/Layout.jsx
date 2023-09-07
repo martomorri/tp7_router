@@ -10,7 +10,7 @@ export default function Layout({ categories }) {
     <>
       <Nav categories={categories} />
       <Outlet />
-      {<Footer />}
+      <Footer />
     </>
   );
 }
