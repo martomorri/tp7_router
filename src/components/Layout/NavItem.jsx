@@ -3,9 +3,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ListaCategorias from "../ListaCategorias";
 import Carrito from "./Carrito";
+import { bool, string, arrayOf, object, oneOfType } from 'prop-types'
 import "./NavItem.css";
 
-export default function NavItem({dropdown = false, item, path = "", logo = false, categories}) {
+function NavItem({dropdown = false, item, path = "", logo = false, categories}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -55,3 +56,13 @@ export default function NavItem({dropdown = false, item, path = "", logo = false
     </li>
   );
 }
+
+NavItem.propTypes = {
+  dropdown: bool,
+  item: oneOfType([string, object]).isRequired,
+  path: string,
+  logo: bool,
+  categories: arrayOf(string)
+}
+
+export default NavItem

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
+import { string } from 'prop-types'
 
-export default function ListaCategorias({ categoria }) {
+function ListaCategorias({ categoria }) {
     return (
         <>
             <li>
@@ -9,3 +10,9 @@ export default function ListaCategorias({ categoria }) {
         </>
     )
 }
+
+ListaCategorias.propTypes = {
+    categoria: string.isRequired
+}
+
+export default ListaCategorias

@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/CardProducto.css";
 import Rating from "./Rating";
+import { string, number } from 'prop-types'
 
-export default function CardProducto(props) {
+function CardProducto(props) {
   return (
     <div className="card">
       <img id="imgCard" src={props.image} className="card-img-top" alt="" />
@@ -21,3 +22,13 @@ export default function CardProducto(props) {
     </div>
   );
 }
+
+CardProducto.propTypes = {
+  image: string.isRequired,
+  title: string.isRequired,
+  description: string.isRequired,
+  price: number.isRequired,
+  id: number.isRequired
+}
+
+export default CardProducto

@@ -1,12 +1,19 @@
 import { useContext } from 'react'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import { Link } from 'react-router-dom'
 import { CarritoContext } from '../../context/carritoContext'
 import ProductoCarrito from './ProductoCarrito'
+import { bool, func } from 'prop-types'
 
 function Carrito({ show, handleClose }) {
     const {carrito} = useContext(CarritoContext)
     let body
+    let monto = 0
+
+    carrito.forEach(p => {
+        monto += p.price
+    })
 
     console.log(carrito)
 
@@ -20,17 +27,27 @@ function Carrito({ show, handleClose }) {
             <Modal.Header closeButton>
                 <Modal.Title>Carrito</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{body}</Modal.Body>
+            <Modal.Body>
+                {body}
+                <p>Monto total: U$D<span>{monto}</span></p>
+            </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Cerrar
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Comprar todo
-                </Button>
+                <Link to="/comprar" type="button">
+                    <Button variant="primary" onClick={handleClose}>
+                        Comprar todo
+                    </Button>
+                </Link>
             </Modal.Footer>
         </Modal>
     )
+}
+
+Carrito.propTypes = {
+    show: bool.isRequired,
+    handleClose: func.isRequired
 }
 
 export default Carrito

@@ -2,8 +2,10 @@ import React from "react";
 import FormFiltro from "../../components/PageProductos/js/FormFiltro";
 import CarouselProd from "../../components/CarouselProd";
 import "../css/PageProductos.css";
+import { ProductoShape } from "../../shapes";
+import { arrayOf, func, number } from 'prop-types'
 
-export default function PageProductos({ productos, setProductos, limit }) {
+function PageProductos({ productos, setProductos, limit }) {
   return (
     <>
       <FormFiltro setProductos={setProductos} limit={limit} />
@@ -11,3 +13,11 @@ export default function PageProductos({ productos, setProductos, limit }) {
     </>
   );
 }
+
+PageProductos.propTypes = {
+  productos: arrayOf(ProductoShape).isRequired,
+  setProductos: func.isRequired,
+  limit: number.isRequired
+}
+
+export default PageProductos

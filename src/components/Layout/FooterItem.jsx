@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import { string } from 'prop-types'
 
-export default function FooterItem({ image }) {
+function FooterItem({ image }) {
   return (
     <>
       <Link
@@ -13,3 +14,9 @@ export default function FooterItem({ image }) {
     </>
   );
 }
+
+FooterItem.propTypes = {
+  image: string.isRequired
+}
+
+export default FooterItem

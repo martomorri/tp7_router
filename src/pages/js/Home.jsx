@@ -2,9 +2,11 @@ import { Carousel } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import CardProducto from "../../components/PageProductos/js/CardProducto";
 import { Spinner } from "react-bootstrap";
-import "../css/CarouselHome.css"; 
+import "../css/CarouselHome.css";
+import { arrayOf } from 'prop-types' 
+import { ProductoShape } from "../../shapes";
 
-export default function Home({ productos }) {
+function Home({ productos }) {
     const [cincoProductos, setCincoProductos] = useState([])
     const [loading, setLoading] = useState(true)
     const [prodRandom, setProdRandom] = useState({})
@@ -62,3 +64,9 @@ export default function Home({ productos }) {
             </>
     )
 }
+
+Home.propTypes = {
+    productos: arrayOf(ProductoShape).isRequired
+}
+
+export default Home

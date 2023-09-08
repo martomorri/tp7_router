@@ -1,9 +1,11 @@
 import { useSkip } from "../hooks/useSkip";
 import CardProducto from "./PageProductos/js/CardProducto";
 import { Spinner } from "react-bootstrap";
+import { arrayOf, string } from 'prop-types'
+import { ProductoShape } from "../shapes";
 import "./Carousel.css";
 
-export default function CarouselProd({ images = null, productos = null }) {
+function CarouselProd({ images = null, productos = null }) {
   let carousel_inner;
   const { paginatedProductos, handleNext, handlePrev } = useSkip({ productos });
 
@@ -86,3 +88,10 @@ export default function CarouselProd({ images = null, productos = null }) {
     </div>
   );
 }
+
+CarouselProd.propTypes = {
+  images: arrayOf(string),
+  productos: arrayOf(ProductoShape)
+}
+
+export default CarouselProd

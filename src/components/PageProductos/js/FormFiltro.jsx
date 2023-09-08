@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 import '../css/FormFiltro.css';
+import { number, func } from 'prop-types'
 
-export default function FormFiltro(props) {
+function FormFiltro(props) {
   const filterProducts = (e) => {
     let text = e.target.value;
     const searchUrl = `https://dummyjson.com/products/search?q=${text}&limit=${props.limit}`;
@@ -35,3 +36,10 @@ export default function FormFiltro(props) {
     </form>
   );
 }
+
+FormFiltro.propTypes = {
+  limit: number.isRequired,
+  setProductos: func.isRequired
+}
+
+export default FormFiltro

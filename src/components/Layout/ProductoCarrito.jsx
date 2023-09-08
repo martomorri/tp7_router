@@ -1,11 +1,22 @@
+import { useContext } from 'react'
+import { CarritoContext } from '../../context/carritoContext'
 import Rating from '../PageProductos/js/Rating'
+import { ProductoShape } from '../../shapes'
 import './ProductoCarrito.css'
 
-export default function ProductoCarrito({ producto }) {
+function ProductoCarrito({ producto }) {
+    const {carrito, setCarrito} = useContext(CarritoContext)
+
+    const handleDelete = id => {
+        setCarrito (
+            carrito.filter(p => p.id !== id)
+        )
+    }
+
     return (
         <div id="producto" className="row">
             <div className="col">
-                <img src={producto.thumbnail} width="80px" />
+                <img src={producto.thumbnail} width="80px" alt="" />
             </div>
             <div className="col">
                 <p id="titulo">{producto.title}</p>
@@ -17,8 +28,14 @@ export default function ProductoCarrito({ producto }) {
                 <Rating rating={producto.rating} />
             </div>
             <div className="col">
-                <button className='btn' id="borrar">X</button>
+                <button onClick={() => handleDelete(producto.id)} className='btn' id="borrar">X</button>
             </div>
         </div>
     )
 }
+
+ProductoCarrito.propTypes = {
+    producto: ProductoShape.isRequired
+}
+
+export default ProductoCarrito

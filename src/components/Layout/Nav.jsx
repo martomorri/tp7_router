@@ -1,7 +1,8 @@
 import NavList from "./NavList";
 import './Nav.css'
+import { arrayOf, string } from 'prop-types'
 
-export default function Nav({categories}) {
+function Nav({categories}) {
   const navItems = [
     {
       item: (
@@ -72,3 +73,9 @@ export default function Nav({categories}) {
     </nav>
   );
 }
+
+Nav.propTypes = {
+  categories: arrayOf(string).isRequired
+}
+
+export default Nav

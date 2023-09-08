@@ -1,7 +1,8 @@
 import React from 'react';
 import '../css/Rating.css';
+import { number } from 'prop-types'
 
-export default function Rating({rating}) {
+function Rating({rating}) {
     const total = 5;
     let empty = total - Math.floor(rating);
     const emptyStar = '☆';
@@ -11,3 +12,9 @@ export default function Rating({rating}) {
         <p className='rating'>{stars}</p>
     )
 }
+
+Rating.propTypes = {
+    rating: number.isRequired
+}
+
+export default Rating

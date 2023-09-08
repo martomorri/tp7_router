@@ -1,7 +1,9 @@
 import React from "react";
 import CardProducto from "./CardProducto";
+import { arrayOf } from 'prop-types'
+import { ProductoShape } from "../../../shapes";
 
-export default function RowCards({productos}) {
+function RowCards({productos}) {
   return (
     <div className="row">
       {productos.map((p) => (
@@ -17,3 +19,9 @@ export default function RowCards({productos}) {
     </div>
   );
 }
+
+RowCards.propTypes = {
+  productos: arrayOf(ProductoShape).isRequired
+}
+
+export default RowCards
