@@ -7,8 +7,8 @@ import ProductoCarrito from './ProductoCarrito'
 import { bool, func } from 'prop-types'
 
 function Carrito({ show, handleClose }) {
-    const {carrito} = useContext(CarritoContext)
-    let body
+    const { carrito } = useContext(CarritoContext)
+    let body, footer
     let monto = 0
 
     carrito.forEach(p => {
@@ -17,9 +17,22 @@ function Carrito({ show, handleClose }) {
 
     console.log(carrito)
 
-    if (carrito.length === 0) body = "Aun no hay productos en el carrito."
+    if (carrito.length === 0) {
+        body = "Aun no hay productos en el carrito."
+        footer = <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+        </Button>
+    }
     else {
         body = carrito.map(p => <ProductoCarrito producto={p} />)
+        footer = <><Button variant="secondary" onClick={handleClose}>
+            Cerrar
+        </Button>
+            <Link to={"/comprar/" + monto + "/" + true} type="button">
+                <Button variant="primary" onClick={handleClose}>
+                    Comprar todo
+                </Button>
+            </Link></>
     }
 
     return (
@@ -32,14 +45,7 @@ function Carrito({ show, handleClose }) {
                 <p>Monto total: U$D<span>{monto}</span></p>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Cerrar
-                </Button>
-                <Link to="/comprar" type="button">
-                    <Button variant="primary" onClick={handleClose}>
-                        Comprar todo
-                    </Button>
-                </Link>
+                {footer}
             </Modal.Footer>
         </Modal>
     )

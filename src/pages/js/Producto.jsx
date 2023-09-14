@@ -10,7 +10,8 @@ import "../css/Producto.css";
 export default function Producto() {
   const { id } = useParams();
   const url = "https://dummyjson.com/products/" + id;
-  const {productos} = useProducts({url, id});
+  const { productos } = useProducts({ url, id });
+  const priceWithDiscount = productos.price - Math.round((productos.price * productos.discountPercentage) / 100)
 
   return (
     <div className="row" style={{ margin: 5 }}>
@@ -29,18 +30,14 @@ export default function Producto() {
           <br />
           <span className="discount">
             <span className="display-4">
-              U$D{" "}
-              {productos.price -
-                Math.round(
-                  (productos.price * productos.discountPercentage) / 100
-                )}{" "}
+              U$D{" "}{priceWithDiscount}{" "}
             </span>
             {productos.discountPercentage}% OFF
           </span>
         </span>
         <Rating rating={productos.rating} />
         <div className="row">
-          <Link to="/comprar" className="btn btn-primary" type="button">
+          <Link to={"/comprar/" + priceWithDiscount + "/" + false} className="btn btn-primary" type="button">
             Comprar ahora
           </Link>
         </div>

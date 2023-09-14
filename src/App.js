@@ -9,6 +9,7 @@ import ProductosXCategoria from './pages/js/ProductosXCategoria';
 import Producto from './pages/js/Producto';
 import NotFound from './pages/js/NotFound';
 import Contacto from './pages/js/Contacto';
+import Comprar from './pages/js/Comprar';
 import { CarritoContext } from './context/carritoContext';
 import { useState } from 'react';
 
@@ -31,6 +32,7 @@ function App() {
               <Route path="/categoria/:cat" element={<ProductosXCategoria productos={productos} />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/productos/:id" element={<Producto />} />
+              <Route path="/comprar/:monto/:isCarrito" element={<Comprar />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
