@@ -17,6 +17,10 @@ function App() {
   const [carrito, setCarrito] = useState([])
 
   useEffect(() => {
+    localStorage.length !== 0 ? setCarrito(JSON.parse(localStorage.getItem("carrito"))) : setCarrito([])
+  }, [])
+
+  useEffect(() => {
     localStorage.setItem("carrito", JSON.stringify(carrito))
   }, [carrito])
 
