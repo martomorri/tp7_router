@@ -4,6 +4,7 @@ import { Modal, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CarritoContext } from "../../context/carritoContext";
+import { arrayOf } from 'prop-types'
 import { ProductoShape } from "../../shapes";
 
 function ModalCarrito(props) {
@@ -57,7 +58,7 @@ function ModalCarrito(props) {
 }
 
 ModalCarrito.propTypes = {
-  product: ProductoShape.isRequired
+  product: arrayOf(ProductoShape).isRequired
 }
 
 export default ModalCarrito

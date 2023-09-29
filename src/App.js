@@ -11,10 +11,14 @@ import NotFound from './pages/js/NotFound';
 import Contacto from './pages/js/Contacto';
 import Comprar from './pages/js/Comprar';
 import { CarritoContext } from './context/carritoContext';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [carrito, setCarrito] = useState([])
+
+  useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+  }, [carrito])
 
   const limit = 100;
   const url = `https://dummyjson.com/products?limit=${limit}&skip=0`;
